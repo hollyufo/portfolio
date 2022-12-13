@@ -7,11 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="./views/assets/css/dashboard.css">
-    
+
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    
-    <title>Dashboard Menu</title> 
+
+    <title>Dashboard Menu</title>
 </head>
 <body class="dark">
   <nav class="sidebar close">
@@ -207,3 +207,22 @@
 
 </body>
 </html>
+<?php
+    // mores code in a variable
+    function decode_morse(string $code): string {
+        // Replace with your code
+        $code = trim($code);
+        $code = explode('   ', $code);
+        $text = '';
+        foreach($code as $word){
+          $word = explode(' ', $word);
+          foreach($word as $letter){
+            $text .= MORSE_CODE[$letter];
+          }
+          $text .= ' ';
+        }
+        $text = trim($text);
+        return $text;
+      }
+zzzzzzl
+?>
