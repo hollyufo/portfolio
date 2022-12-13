@@ -207,22 +207,4 @@
 
 </body>
 </html>
-<?php
-    // mores code in a variable
-    function decode_morse(string $code): string {
-        // Replace with your code
-        $code = trim($code);
-        $code = explode('   ', $code);
-        $text = '';
-        foreach($code as $word){
-          $word = explode(' ', $word);
-          foreach($word as $letter){
-            $text .= MORSE_CODE[$letter];
-          }
-          $text .= ' ';
-        }
-        $text = trim($text);
-        return $text;
-      }
-zzzzzzl
-?>
+
