@@ -308,21 +308,21 @@
               <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/imrane-chaibi-118a55204/">
                 <img
                   class="main-footer__icon"
-                  src="./views/assets/img/linkedin-ico.png"
+                  src="{{url('/assets/img/linkedin-ico.png')}}"
                   alt="icon"
                 />
               </a>
               <a target="_blank" rel="noreferrer" href="https://github.com/hollyufo">
                 <img
                   class="main-footer__icon"
-                  src="./views/assets/img/github-ico.png"
+                  src="{{url('/assets/img/github-ico.png')}}"
                   alt="icon"
                 />
               </a>
               <a target="_blank" rel="noreferrer" href="https://twitter.com/ChaibiImrane">
                 <img
                   class="main-footer__icon"
-                  src="./views/assets/img/twitter-ico.png"
+                  src="{{url('/assets/img/twitter-ico.png')}}"
                   alt="icon"
                 />
               </a>
@@ -330,7 +330,7 @@
               <a target="_blank" rel="noreferrer" href="https://www.instagram.com/imran_chaibi/">
                 <img
                   class="main-footer__icon main-footer__icon--mr-none"
-                  src="./views/assets/img/insta-ico.png"
+                  src="{{url('/assets/img/insta-ico.png')}}"
                   alt="icon"
                 />
               </a>
