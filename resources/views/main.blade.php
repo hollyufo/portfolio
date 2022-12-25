@@ -254,9 +254,9 @@
           </span>
         </h2>
         <div class="contact__form-container">
-          <form action="./mailer.php" method="post" class="contact__form">
+          <form action="" method="post" class="contact__form">
             <div class="contact__form-field">
-
+                @csrf
               <label class="contact__form-label" for="name">Name</label>
               <input
                 required
