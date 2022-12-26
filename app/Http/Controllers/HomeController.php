@@ -7,6 +7,7 @@ use App\Models\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\project;
 class HomeController extends Controller
 {
     /**
@@ -114,5 +115,13 @@ class HomeController extends Controller
         // getting the messages
         $data['messages'] = Home::all();
         return view('dashboard', compact('data'));
+    }
+    // project
+
+    public function project()
+    {
+        // getting the projects
+        $data['projects'] = Project::all();
+        return view('project', compact('data'));
     }
 }
