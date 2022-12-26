@@ -16,7 +16,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::post('/', [HomeController::class, 'mailContactForm'])->name('contact');
+Route::post('/', [HomeController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

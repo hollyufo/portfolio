@@ -2,36 +2,100 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Home;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Contact;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class HomeController extends Controller
 {
-    // return the main page
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         return view('main');
     }
-    // to send the email
-    public function mailContactForm(Request $request){
-        // checking the validation
-        $validator = Validator::make(request()->all(), [
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email',
-            'message' => 'required'
+            'email' => 'required',
+            'message' => 'required',
         ]);
-        if($validator->fails()){
-            return redirect()->back()->with('toast_error', 'Please fill in all the fields');
+        if ($validator->fails()) {
+            return redirect('/')->with('toast_error', 'Please fill all the fields');
         }else{
-            $contact = [
-                'name' => $request['name'],
-                'email' => $request['email'],
-                'message' => $request['message'],
-            ];
-            // saving the message to the database
-            Contact::create($contact);
-            return redirect()->back()->with('toast_success', 'Your message has been sent successfully');
+            $home = new Home();
+            $home->name = $request->name;
+            $home->email = $request->email;
+            $home->message = $request->message;
+            $home->save();
+            return redirect('/')->with('toast_success', 'Message sent successfully');
         }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Home  $home
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Home $home)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Home  $home
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Home $home)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Home  $home
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Home $home)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Home  $home
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Home $home)
+    {
+        //
     }
 }
