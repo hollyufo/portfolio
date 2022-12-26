@@ -99,9 +99,12 @@ class HomeController extends Controller
      * @param  \App\Models\Home  $home
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Home $home)
+    public function destroy($id)
     {
-        //
+        // deleting a message
+        $home = Home::find($id);
+        $home->delete();
+        return redirect('/dashboard')->with('success', 'Message deleted successfully');
     }
     // dashboard
     public function dashboard()

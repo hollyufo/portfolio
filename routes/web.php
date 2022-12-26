@@ -23,6 +23,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+    // route to delete a message
+    Route::delete('/dashboard/{id}', [HomeController::class, 'destroy'])->name('dashboard.destroy');
+    // route to display project
+    Route::get('/project', [HomeController::class, 'project'])->name('project');
 });
 
 require __DIR__.'/auth.php';
