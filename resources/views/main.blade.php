@@ -1,4 +1,3 @@
-@include('sweetalert::alert')
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -351,5 +350,6 @@
     </footer>
 
     <script src="./assets/js/index.js"></script>
+    @include('sweetalert::alert')
   </body>
 </html>
