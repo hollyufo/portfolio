@@ -17,6 +17,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('/', [HomeController::class, 'store']);
+Route::get('/allprojects', [HomeController::class, 'allprojects']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -27,6 +28,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/dashboard/{id}', [HomeController::class, 'destroy'])->name('dashboard.destroy');
     // route to display project
     Route::get('/project', [HomeController::class, 'project'])->name('project');
+    // route to sva a project
+    Route::post('/add-project', [HomeController::class, 'storeProject'])->name('project.store');
+    // route to displqy the add project form
+    Route::get('/add-project', [HomeController::class, 'addProject'])->name('add-project');
+
 });
 
 require __DIR__.'/auth.php';

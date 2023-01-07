@@ -23,7 +23,12 @@ class HomeController extends Controller
         $view->save();
         return view('main');
     }
-
+    public function allprojects()
+    {
+        // getting all the projects
+        $data['projects'] = Project::all();
+        return view('allprojects', compact('data'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -123,5 +128,31 @@ class HomeController extends Controller
         // getting the projects
         $data['projects'] = Project::all();
         return view('project', compact('data'));
+    }
+    // store project
+    public function storeProject(Request $request)
+    {
+        // validating the project
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'description' => 'required',
+            'link' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return redirect('/project')->with('toast_error', 'Please fill all the fields');
+        }else{
+            $project = new Project();
+            $project->name = $request->name;
+            $project->description = $request->description;
+            $project->link = $request->link;
+            $project->image = $request->image;
+            $project->github = $request->github;
+            $project->save();
+            return redirect('/project')->with('success', 'Project added successfully');
+        }
+    }
+    public function addProject()
+    {
+        return view('addProject');
     }
 }

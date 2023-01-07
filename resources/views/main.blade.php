@@ -12,7 +12,6 @@
     <meta property="og:description" content="Hey! It's Imrane Chaibi and I'm a Full Stack Web Developer located in Rabat morocco. I've done remote projects for agencies, and collaborated with talented people to create digital products for both business and consumer use...." />
 
     <link rel="stylesheet" href="{{url('assets/css/portfolio.css')}}" />
-
     <link rel="apple-touch-icon" sizes="180x180" href="{{url('assets/img/apple-touch-icon.png)')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{url('assets/img/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{url('assets/img/favicon-16x16.png')}}">
@@ -235,12 +234,15 @@
               <p class="projects__row-content-desc">
                 al majazer market  needed a website to present itself as a new modern way, and also help promote its products to attract more customers and businesses.
               </p>
-              <a
-                href="./almajazer"
-                class="btn btn--med btn--theme dynamicBgClr"
-                >Case Study</a
-              >
             </div>
+          </div>
+          <div style="
+          display: flex;
+          justify-content: space-around">
+            <!-- link to the allproject page -->
+            <a href="{{url('allprojects')}}" class="btn btn--med btn--theme dynamicBgClr"
+              >All Projects</a
+            >
           </div>
         </div>
       </div>
